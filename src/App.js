@@ -37,10 +37,22 @@ function App() {
       onClick={() => {}}
       /> 
       </div> 
-
-    <div className="container">
-      <MovieCard movie = {movie} />
-    </div>
+      {
+        movies?.length > 0 
+        ? (
+            <div className="container">
+            {movies.map((movie) => (
+              <MovieCard movie = {movie} />
+            ))}
+            </div>
+        ):
+        (
+          <div className="empty">
+            No Match Found !
+            </div>
+        )
+      }
+    
     </div>
   );
 }
